@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Chat</title>
+    <style>
+        .chatbox{
+            margin: 0 auto;
+            display: block;
+            height: 350px;
+            width: 300px;
+            border: none;
+            background-color: wheat;
+            text-align: center;
+        }
+        .message1, .message2{
+            margin: 0 auto;
+            display: block;
+            width: 300px;
+            background-color: wheat;
+            border: none;
+            text-align: center;
+        }
+        .send{
+            margin: 0 auto;
+            display: block;
+        }
+        h3{
+            text-align: center;
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>    
+    <h3>JavaScript Chat</h3>
+    <textarea cols="30" rows="10" class="chatbox" readonly=""></textarea><br/>
+    <input type="text" class="message1" placeholder="type message here"><br/>
+    <button class="send" onclick="getText1()">send</button><br>
+
+    <input type="text"  class="message2"  placeholder="type message here"><br/>
+    <button class="send" onclick="getText2()">send</button>
+    <script>
+        const chatbox = document.querySelector(".chatbox");
+        //console.log(".chatbox");
+        const message1 = document.querySelector(".message1");
+        //console.log(".message1");
+        const message2 = document.querySelector(".message2");
+        //console.log(".message2");
+        const send = document.querySelector(".send");
+        //console.log(".send");
+        let sender = document.querySelector(".chatbox");
+        //console.log(".chatbox");
+
+        function getText1(){
+           if (message1.value.length == 0){
+                alert("Enter message first.");
+                return false;
+           }
+           else{
+                sender.innerHTML = sender.innerHTML + "Me : " + message1.value + "\n";    
+           }
+        }
+        function getText2(){
+            if (message2.value.length == 0){
+                alert("Enter message first.");
+                return false;
+            }
+            else{
+                sender.innerHTML = sender.innerHTML + "You : " + message2.value + "\n";
+            }
+        }
+    </script>
+</body>
+</html>

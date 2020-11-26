@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Simple Currency Convertor</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="kursmatauang.css">
+	<script>
+	function convert() {
+		var calc    = document.getElementById("calc").value;
+		var currency1     = document.getElementById("mny1");
+		var currency1value= currency1.options[currency1.selectedIndex].value;
+		var currency1text = currency1.options[currency1.selectedIndex].text;
+
+		var currency2     = document.getElementById("mny2");
+		var currency2value= currency2.options[currency2.selectedIndex].value;
+		var currency2text = currency2.options[currency2.selectedIndex].text;
+
+		var start  = 1;
+		var formula1 = (start / currency1value);
+		var formula2 = formula1*currency2value;
+		var formula3 = formula2*calc;
+
+		document.getElementById("hasil").value = formula3;
+	}
+</script>
+</head>
+<body>
+	<h3>Currency Convertor</h3><br>
+	<table>
+		<tr>
+			<td id="border"><b>&nbsp;Select currency</b></td>
+			<td id="dt"></td>
+			<td id="border"><b>Exchange to</b></td>
+		</tr>
+		<tr>
+			<td>
+			<select id="mny1" class="form-control form-control-lg">
+				<option selected="selected" value="1">Indonesian - Rupiah</option>
+				<option value="0.000054">England - Poundsterling</option>
+				<option value="0.000059">Europe - Euro</option>
+				<option value="0.000071">USA - Dollar</option>
+				<option value="0.000095">Singapore - Dollar</option>
+				<option value="0.00027">Saudi Arabia - Riyal</option>
+				<option value="0.0074">Japan - Yen</option>
+			</select>
+			</td>
+			<td></td>
+			<td>
+			<select id="mny2" class="form-control form-control-lg"> 
+				<option selected="selected" value="1">Indonesian - Rupiah</option>
+				<option value="0.000054">England - Poundsterling</option>
+				<option value="0.000059">Europe - Euro</option>
+				<option value="0.000071">USA - Dollar</option>
+				<option value="0.000095">Singapore - Dollar</option>
+				<option value="0.00027">Saudi Arabia - Riyal</option>
+				<option value="0.0074">Japan - Yen</option>
+			</select> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<input id="calc" type="text" class="form-control">
+			</td>
+			<td id="dt"></td>
+			<td>
+			<input type="text" id="hasil" name="" readonly="" class="form-control">
+			</td>
+		</tr>
+		<tr>
+			<td><br/></td>
+		</tr>
+		<tr>
+			<td colspan="4" id="button">
+				<button type="submit" class="btn btn-primary" onclick="convert();" style="height: 100%; width: 15%">Calculate</button>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
